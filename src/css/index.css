@@ -1,0 +1,166 @@
+#header {
+  height: 87px;
+}
+
+#header .header {
+  border-bottom: 2px solid #ccc;
+  height: 78px;
+}
+
+#header .header .a1 img {
+  width: 119px;
+  height: 75px;
+  float: left;
+  margin-right: 60px;
+}
+
+#header .header .top_u1 {
+  float: left;
+}
+
+#header .header .top_u1 li {
+  float: left;
+  height: 78px;
+  box-sizing: border-box;
+  padding-top: 12px;
+  margin-right: 40px;
+}
+
+#header .header .top_u1 li a {
+  font-size: 14px;
+  display: block;
+  font-weight: 550;
+  color: #000;
+  height: 40px;
+  line-height: 40px;
+  border-bottom: 2px solid #fff;
+}
+
+#header .header .top_u1 li a:hover {
+  border-bottom: 2px solid #FF2837;
+  color: #FF2837;
+}
+
+#header .header .kuang {
+  width: 288px;
+  height: 36px;
+  border: 2px solid #FF2837;
+  float: left;
+  box-sizing: border-box;
+  padding-left: 10px;
+  margin-top: 16px;
+  z-index: 9;
+  border-right: none;
+}
+
+#header .header .kuang .cha {
+  width: 277px;
+  height: 24px;
+}
+
+#header .header .btn_cha {
+  margin-top: 14px;
+  cursor: pointer;
+  width: 53px;
+  height: 40px;
+  background: url(../images/btn_cha.png) no-repeat right center;
+  background-size: 53px 36px;
+  float: left;
+}
+
+#header .header .top_right {
+  float: left;
+  width: 210px;
+  margin-left: 40px;
+  margin-top: 14px;
+}
+
+#header .header .top_right li {
+  float: left;
+}
+
+#header .header .top_right li a {
+  width: 40px;
+  display: block;
+  margin-right: 30px;
+}
+
+#header .header .top_right li a img {
+  height: 40px;
+  width: 40px;
+}
+
+#banner .banner {
+  height: 680px;
+  width: 1160px;
+  background: url(../images/indexN_header_bg.jpg) no-repeat center center;
+  background-size: 1880px 700px;
+  box-sizing: border-box;
+  padding-top: 200px;
+  padding-left: 80px;
+}
+
+#banner .banner h1 {
+  font-size: 40px;
+  font-weight: 1000;
+}
+
+#banner .banner .p1 {
+  font-size: 40px;
+  font-weight: 400;
+}
+
+#banner .banner .p2 {
+  width: 150px;
+  height: 150px;
+  background: url(../images/app_download_ewm.png) no-repeat center center;
+  background-size: 150px 150px;
+  margin-top: 95px;
+  margin-left: 145px;
+}
+
+#lunbo {
+  background-color: #FF2837;
+}
+
+#lunbo .lunbo {
+  height: 700px;
+  position: relative;
+}
+
+#lunbo .lunbo .left {
+  width: 600px;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding-top: 50px;
+}
+
+#lunbo .lunbo .left h2 {
+  font-size: 24px;
+  color: #fff;
+  margin-top: 60px;
+}
+
+#lunbo .lunbo .left h2.big {
+  font-size: 50px;
+}
+
+#lunbo .lunbo .left p {
+  font-size: 24px;
+  color: #fff;
+}
+
+#lunbo .lunbo .right {
+  position: absolute;
+  top: 50px;
+  right: 20px;
+  background: url(../images/indexN_part2_r_bg.png) no-repeat center center;
+  background-size: 390px 800px;
+  height: 800px;
+  width: 390px;
+}
+
+#lunbo .lunbo .right img {
+  height: 800px;
+  width: 390px;
+}
