@@ -1,0 +1,107 @@
+#header {
+  position: relative;
+  height: 87px;
+}
+
+#header .header {
+  border-bottom: 2px solid #ccc;
+  height: 78px;
+}
+
+#header .header .a1 img {
+  width: 119px;
+  height: 75px;
+  float: left;
+  margin-right: 60px;
+}
+
+#header .header .top_u1 {
+  float: left;
+}
+
+#header .header .top_u1 li {
+  float: left;
+  height: 78px;
+  box-sizing: border-box;
+  padding-top: 12px;
+  margin-right: 40px;
+}
+
+#header .header .top_u1 li a {
+  font-size: 14px;
+  display: block;
+  font-weight: 550;
+  color: #000;
+  height: 40px;
+  line-height: 40px;
+  border-bottom: 2px solid #fff;
+  text-decoration: none;
+}
+
+#header .header .top_u1 li a:hover {
+  border-bottom: 2px solid #FF2837;
+  color: #FF2837;
+}
+
+#header .header .kuang {
+  width: 288px;
+  height: 36px;
+  border: 2px solid #FF2837;
+  float: left;
+  box-sizing: border-box;
+  padding-left: 10px;
+  margin-top: 16px;
+  z-index: 9;
+  border-right: none;
+}
+
+#header .header .kuang .cha {
+  width: 277px;
+  height: 24px;
+}
+
+#header .header .btn_cha {
+  margin-top: 14px;
+  cursor: pointer;
+  width: 53px;
+  height: 40px;
+  background: url(../images/btn_cha.png) no-repeat right center;
+  background-size: 53px 36px;
+  float: left;
+}
+
+#header .header .top_right {
+  float: left;
+  width: 210px;
+  margin-left: 40px;
+  margin-top: 14px;
+}
+
+#header .header .top_right li {
+  float: left;
+}
+
+#header .header .top_right li a {
+  width: 40px;
+  display: block;
+  margin-right: 30px;
+}
+
+#header .header .top_right li a img {
+  height: 40px;
+  width: 40px;
+}
+
+.milk h3 {
+  font-size: 22px;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.milk p {
+  font-size: 12px;
+  text-align: center;
+  margin-top: 10px;
+  color: #ccc;
+}

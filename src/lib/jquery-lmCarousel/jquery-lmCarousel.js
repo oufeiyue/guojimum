@@ -1,10 +1,10 @@
-jQuery.fn.lmCarousel = function(obj){
+jQuery.fn.hh = function(obj){
     console.log(this);
     var defaults = {
         imgs : [],
         width : 320,
         height : 750,
-        type : "fade",
+        type : "xx",
         seamless : false,
         idx : 0,
     };
@@ -21,13 +21,13 @@ jQuery.fn.lmCarousel = function(obj){
             $li.appendTo($ul);
         }
         $ul.appendTo(this);
-        this.addClass('lmCarousel').width(opt.width).height(opt.height);
+        this.addClass('hh').width(opt.width).height(opt.height);
         // 2.判断type类型，实现不同的css样式
         if(opt.type == "horizontal"){
             $ul.addClass('horizontal');
             $ul.width(opt.width*len);
-        }else if(opt.type == "fade"){
-            $ul.addClass('fade');
+        }else if(opt.type == "xx"){
+            $ul.addClass('xx');
             $ul.width(opt.width).height(opt.height);
             $ul.children().eq(opt.idx).css("opacity",1).siblings().css("opacity",0)
         }
@@ -50,7 +50,7 @@ jQuery.fn.lmCarousel = function(obj){
             $ul.animate({top:-opt.idx*opt.height},1000);
         }else if(opt.type == "horizontal"){
             $ul.animate({left:-opt.idx*opt.width},1000);
-        }else if(opt.type == "fade"){
+        }else if(opt.type == "xx"){
             $ul.children().eq(opt.idx).animate({opacity:1},1000).siblings().animate({opacity:0},1000);
         }
     }

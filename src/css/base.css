@@ -33,7 +33,7 @@ s,i,em{font-style:normal;text-decoration:none;}
 
 /*公共类*/
 .con {  /*内容、版心 提取 */
-    width: 1160px;
+    width: 1199px;
     margin:0 auto;
 }
 .fl {
@@ -48,6 +48,7 @@ s,i,em{font-style:normal;text-decoration:none;}
 .hide {
     display:none;
 }
+body{font-size: 14px;}
 .f12{ font-size: 12px;}
 .f14{ font-size: 14px;}
 .f16{ font-size: 16px;}
