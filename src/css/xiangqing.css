@@ -1,4 +1,16 @@
 @charset "UTF-8";
+.box {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background-color: #000;
+  opacity: 0.5;
+  z-index: 1;
+  display: none;
+}
+
 #header {
   position: relative;
   height: 87px;
@@ -504,4 +516,126 @@
 
 .btns .btn5 {
   border: none;
+}
+
+#buy {
+  z-index: 10000;
+  width: 100%;
+  padding-bottom: 20px;
+  background-color: #fafafa;
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+}
+
+#buy .buy {
+  height: 60px;
+  padding-top: 20px;
+}
+
+#buy .buy .share {
+  width: 60px;
+  float: left;
+  margin-left: 60px;
+  text-align: center;
+}
+
+#buy .buy .share img {
+  width: 22px;
+  height: 22px;
+}
+
+#buy .buy .share p {
+  font-size: 12px;
+  color: #b9b9b9;
+}
+
+#buy .buy .gou {
+  display: block;
+  width: 60%;
+  height: 50px;
+  line-height: 50px;
+  margin: 0px 10%;
+  background-color: #ff2837;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 25px;
+  float: left;
+  text-align: center;
+  cursor: pointer;
+}
+
+#buy .buy .collect {
+  float: left;
+}
+
+#buy .clear {
+  display: none;
+  padding-top: 20px;
+}
+
+#buy .clear .photo {
+  float: left;
+  margin-right: 315px;
+}
+
+#buy .clear .photo img {
+  width: 70px;
+  height: 70px;
+}
+
+#buy .clear .calculate {
+  float: left;
+}
+
+#buy .clear .calculate .goodsPrice {
+  color: #ff2837;
+  font-size: 16px;
+  margin: 5px 0 16px 0;
+}
+
+#buy .clear .calculate .buy_c {
+  float: left;
+}
+
+#buy .clear .calculate .buy_c img {
+  width: 16px;
+  height: 16px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+#buy .clear .calculate .buy_c #number {
+  width: 50px;
+  height: 24px;
+  padding: 0;
+  text-align: center;
+  font-size: 14px;
+  vertical-align: middle;
+  border: none;
+  background-color: #f0f0f0;
+  border-radius: 13px;
+}
+
+#buy .clear .close {
+  float: right;
+  margin-right: 30px;
+}
+
+#buy .clear .close img {
+  width: 12px;
+  height: 12px;
+}
+
+#buy .clear .btn_buy {
+  width: 80%;
+  height: 50px;
+  line-height: 50px;
+  margin: 110px 0 0 122px;
+  background-color: #ff2837;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 25px;
+  text-align: center;
+  cursor: pointer;
 }
