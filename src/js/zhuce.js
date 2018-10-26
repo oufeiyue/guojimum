@@ -10,6 +10,7 @@ jQuery(function(){
 	var mima= document.getElementsByClassName("mima")[0];
 	var remima= document.getElementsByClassName("remima")[0];
 	var gou= document.getElementsByClassName("gou")[0];
+	var name= document.getElementsByClassName("name")[0];
 	var $tj = $(".tj");
 	var _second;
 	var _four;
@@ -66,15 +67,23 @@ jQuery(function(){
 		var res =_four.replace(reg,"");
         $four.val(res);
         _four = $four.val();
-		// if(!/^1[3-9]\d{9}$/.test(_four)){
-		// 	phone.innerHTML="请输入正确的手机号";
-		// 	$first.val("");
-		// 	phone.className ="red";
-		// }
-		// else{
-		// 	phone.innerHTML="手机格式正确";
-		// 	phone.className ="green";
-		// }
+        $.ajax({
+			url:"../api/zhuce2.php",
+			type:"GET",
+			data:{
+				uname:_four
+			},
+			success:function(res){
+				if(res == "can"){
+					name.innerHTML="可以使用该用户名";
+					name.className ="green";
+				}else if(res =="not"){
+					name.innerHTML="该用户名已被占用";
+					name.className ="red";
+					$four.val("");
+				}
+			}
+		})
 	})
 	$five.on("blur",function(){
 		var res = verifyCode.validate($five.val());
@@ -84,11 +93,12 @@ jQuery(function(){
 			}else{
 				yzm.innerHTML ="验证码错误";
 				yzm.className ="red";
+				$five.val("");
 			}
 		
 	})
 	$tj.on("click",function(){
-		if($four.val() !== "" && phone.innerHTML=="手机格式正确" && mima.innerHTML=="密码格式正确" && remima.innerHTML=="两次密码相同" && yzm.innerHTML =="验证码正确" && gou.checked){
+		if($four.val() !== "" && phone.innerHTML=="手机格式正确" && mima.innerHTML=="密码格式正确" && remima.innerHTML=="两次密码相同" && yzm.innerHTML =="验证码正确" && name.innerHTML=="可以使用该用户名" && gou.checked){
 	console.log(666);
 			$.ajax({
 			url:"../api/zhuce.php",
@@ -99,9 +109,9 @@ jQuery(function(){
 				password:_second
 			},
 			success:function(res){
-				if(res == "can"){
+				if(res == "cheng"){
 					alert("注册成功");
-				}else if(res =="not"){
+				}else if(res =="bai"){
 					alert("注册失败");
 				}
 			}

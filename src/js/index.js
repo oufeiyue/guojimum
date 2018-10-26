@@ -5,7 +5,19 @@ jQuery(function($){
 	  interval: 3000
 	})
 	var timer;
+    var $car_li =$(".car_li");
+    var names =document.getElementsByClassName("names")[0];
+    var $zhaoshangpin =$(".zhaoshangpin");
+    var yonghuming = decodeURI(location.search);
+    yonghuming = yonghuming.slice(12);
+    console.log(yonghuming);
 	var btn5 = document.getElementsByClassName("btn5")[0];
+    console.log(yonghuming);
+    if(yonghuming ==""){
+    names.innerHTML ="请先登录";
+    }else{
+        names.innerHTML ="你好," +yonghuming;
+    }
 	btn5.onclick = function(){
 	 	console.log(666);
                 clearInterval(timer);
@@ -21,4 +33,10 @@ jQuery(function($){
                     window.scrollBy(0,-speed);
                 }, 30)
             }
+    $car_li.on("click",function(){
+        location.href="html/gouwuche?yonghuming="+yonghuming;
+    })
+    $zhaoshangpin.on("click",function(){
+        location.href="html/goods?yonghuming="+yonghuming;
+    })
 })

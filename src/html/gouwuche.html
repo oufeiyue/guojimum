@@ -5,6 +5,8 @@
 	<title>Document</title>
 	<link rel="stylesheet" type="text/css" href="../css/gouwuche.css">
 	<link rel="stylesheet" type="text/css" href="../css/base.css">
+	<script type="text/javascript" src="../lib/jquery-3.2.1.js"></script>
+	<script src="../js/gouwuche.js" type="text/javascript"></script>
 </head>
 <body>
 	<div id="header">
@@ -25,7 +27,7 @@
 			<ul class="top_right">
 				<li><a href="#"><img src="../images/top_icon_gwd.png" alt=""></a></li>
 				<li><a href="#"><img src="../images/top_icon_message.png" alt=""></a></li>
-				<li><a href="#"><img src="../images/top_icon_user.png" alt=""></a></li>
+				<li class="l1"><a href="zhuce.html"><img src="../images/top_icon_user.png" alt=""></a><span class="names"></span></li>
 		</ul>
 	</div>
 </div>
@@ -38,8 +40,8 @@
 <div id="jiesuan">
 	<div class="jiesuan con">
 		<table>
-			<tr>
-				<th><input type="checkbox" name=""></th>
+			<tr class="tr1">
+				<th><input type="checkbox" name="" class="allBtn"></th>
 				<th>商品</th>
 				<th>直邮方式</th>
 				<th>单价</th>
@@ -48,7 +50,7 @@
 				<th>税费小计</th>
 				<th>操作</th>
 			</tr>
-			<tr>
+			<!-- <tr>
 				<th><input type="checkbox" name=""></th>
 				<th>
 					<img src="../images/lingshi.PNG" class="shang">
@@ -64,12 +66,12 @@
 				<th><span>￥266.00</span></th>
 				<th><span>税费补贴</span></th>
 				<th><span>删除</span></th>
-			</tr>
+			</tr> -->
 			<tr>
 				<th><input type="checkbox" name=""></th>
 				<th>
 					<span>商品总计（不含运费）: </span>
-					<span class="dollar">￥0.00</span>
+					<span class="dollar">0.00</span>
 					<span>商品税费:</span>
 					<span>0</span>
 				</th>

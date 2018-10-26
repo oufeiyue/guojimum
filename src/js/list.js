@@ -1,6 +1,18 @@
 jQuery(function($){
-	var currentId=decodeURI(location.search);
-    currentId = currentId.slice(11);
+	var params = decodeURI(location.search);
+	params = params.slice(1,-1);
+
+	// 2.将字符串转成对象
+	var paramsArr = params.split("&");
+	var obj = {};
+	paramsArr.forEach(function(item){
+			// "age=18" ====>[age,18]
+			var arr = item.split("=");
+			obj[arr[0]] = arr[1];
+		})
+    var currentId = obj.currentId;
+    var yonghuming = obj.yonghuming;
+    console.log(currentId,yonghuming);
     var u1 =document.getElementsByClassName("brand_u1")[0];
     var jia = document.getElementsByClassName("jia")[0];
     var miaoshu_t = document.getElementsByClassName("miaoshu_t")[0];
@@ -68,7 +80,7 @@ jQuery(function($){
     tp.onclick=function(e){
     	if(e.target.tagName.toLowerCase() == "img"){
     		var goodId = e.target.parentElement.id;
-    		location.href = "xiangqing.html?goodId="+encodeURI(goodId);
+    		location.href = "xiangqing.html?goodId="+encodeURI(goodId)+"&yonghuming="+yonghuming+"&";
     	}
     }
 	function pages(){

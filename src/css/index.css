@@ -72,7 +72,7 @@
 
 #header .header .top_right {
   float: left;
-  width: 210px;
+  width: 300px;
   margin-left: 40px;
   margin-top: 14px;
 }
@@ -90,6 +90,19 @@
 #header .header .top_right li a img {
   height: 40px;
   width: 40px;
+  float: left;
+}
+
+#header .header .top_right li .names {
+  position: absolute;
+  top: 21px;
+  right: -50px;
+  font-size: 12px;
+  color: #FF2837;
+}
+
+#header .header .top_right .l1 {
+  position: relative;
 }
 
 #banner .banner {

@@ -90,6 +90,19 @@
 #header .header .top_right li a img {
   height: 40px;
   width: 40px;
+  float: left;
+}
+
+#header .header .top_right li .names {
+  position: absolute;
+  top: 21px;
+  right: -50px;
+  font-size: 12px;
+  color: #FF2837;
+}
+
+#header .header .top_right .l1 {
+  position: relative;
 }
 
 .classfiy {

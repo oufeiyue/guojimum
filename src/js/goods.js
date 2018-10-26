@@ -1,6 +1,8 @@
 jQuery(function($){
 	var timer;
 	var btn5 = document.getElementsByClassName("btn5")[0];
+    var yonghuming = decodeURI(location.search);
+    yonghuming = yonghuming.slice(12);
 	btn5.onclick = function(){
 	 	console.log(666);
                 clearInterval(timer);
@@ -20,6 +22,6 @@ jQuery(function($){
     $ul.on("click","li",function(e){
             console.log(666);
             var currentId =this.id;
-            location.href = "list.html?currentId="+encodeURI(currentId);
+            location.href = "list.html?currentId="+encodeURI(currentId)+"&yonghuming=" +yonghuming+"&";
     })
 })
