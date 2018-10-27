@@ -2,6 +2,7 @@ jQuery(function($){
 	var timer;
 	var btn5 = document.getElementsByClassName("btn5")[0];
     var $i1=$(".i1");
+    var $btn2=$(".btn2");
     var yonghuming= document.cookie;
      yonghuming = yonghuming.slice(11);
      console.log(yonghuming);
@@ -41,4 +42,7 @@ jQuery(function($){
                 $i1.html(btn2_len);
             }
         })
+    $btn2.on("click",function(){
+        location.href="gouwuche.html";
+    })
 })

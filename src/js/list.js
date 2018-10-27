@@ -1,4 +1,5 @@
 jQuery(function($){
+	var $btn2=$(".btn2");
 	var $i1=$(".i1");
 	var params = decodeURI(location.search);
 	params = params.slice(1,-1);
@@ -151,4 +152,7 @@ jQuery(function($){
                 $i1.html(btn2_len);
             }
         })
+    $btn2.on("click",function(){
+        location.href="gouwuche.html";
+    })
 })

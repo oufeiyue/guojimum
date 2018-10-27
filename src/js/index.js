@@ -4,27 +4,29 @@ jQuery(function($){
 	$('.carousel').carousel({
 	  interval: 3000
 	})
+    var $btn2=$(".btn2");
     var $i1=$(".i1");
     var $tui =$(".tui");
 	var timer;
     var $car_li =$(".car_li");
     var names =document.getElementsByClassName("names")[0];
     var $zhaoshangpin =$(".zhaoshangpin");
+    var goodslist = document.getElementsByClassName("goodslist")[0];
     // var yonghuming = decodeURI(location.search);
     // yonghuming = yonghuming.slice(12);
     // console.log(yonghuming);
     var yonghuming = document.cookie;
     yonghuming = yonghuming.slice(11);
-    console.log(yonghuming);
+    // console.log(yonghuming);
 	var btn5 = document.getElementsByClassName("btn5")[0];
-    console.log(yonghuming);
+    // console.log(yonghuming);
     if(yonghuming ==""){
     names.innerHTML ="请先登录";
     }else{
         names.innerHTML ="你好," +yonghuming;
     }
 	btn5.onclick = function(){
-	 	console.log(666);
+	 	// console.log(666);
                 clearInterval(timer);
                 timer = setInterval(function(){
                     var currentPos = window.scrollY;
@@ -46,7 +48,7 @@ jQuery(function($){
     })
     $tui.on("click",function(){
         Cookie.removeCookie("yonghuming",yonghuming,"/");
-        console.log(666);
+        // console.log(666);
         location.href="index.html";
     })
     $.ajax({
@@ -60,6 +62,30 @@ jQuery(function($){
                 goodsArr = JSON.parse(res);
                 var btn2_len = goodsArr.length;
                 $i1.html(btn2_len);
+            }
+        })
+    $btn2.on("click",function(){
+        location.href="html/gouwuche.html";
+    })
+    $.ajax({
+            url:"api/xuanran.php",
+            type:"GET",
+            // async:false,
+            data:{
+                uname:yonghuming
+            },
+            success:function(res){
+                var goodsArr = JSON.parse(res);
+                goodslist.innerHTML += goodsArr.map(function(item,idx){
+                    var imgurl = item.img.slice(3);
+                    console.log(imgurl);
+                    return '<div class="list1">'+
+                        '<p><img src="'+imgurl+'" alt=""></p>'+
+                    '<p class="title1">'+item.title+'</p>'+
+                    '<p class="p1">'+item.price+'</p>'+
+                    '<p class="p1">'+item.qty+'</p>'+
+                    '</div>'
+                }).join("");
             }
         })
 })

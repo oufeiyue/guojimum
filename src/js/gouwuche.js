@@ -88,6 +88,7 @@ jQuery(function($){
 	}
 	changeAllChecked();
 	$("tr:nth-of-type(n+1)").on("click",".jia",function(){
+		// zongjia();
 		// console.log(666);
 		var $num= parseInt($(this).prev().val());
 		var ids = $(this).closest('tr').attr('id');
@@ -98,7 +99,7 @@ jQuery(function($){
 		var $djia = $(this).parent().prev().find('span').html();
 		var $totalPrice= ($num+1) * $djia;
 		// console.log(qtyy,ids);
-		$(this).parent().next().find('span').html("￥"+$totalPrice);
+		$(this).parent().next().find('span').html($totalPrice);
 			$.ajax({
                             url:"../api/qty.php",
                             type:"GET",
@@ -112,8 +113,10 @@ jQuery(function($){
                         }
 
                     })
+			zongjia();
 	})
 	$("tr:nth-of-type(n+1)").on("click",".jian",function(){
+		// zongjia();
 		// console.log(666);
 		var jian_id =$(this).closest('tr').attr('id');
 		var jian_qty = Number($(this).next().val());
@@ -129,9 +132,12 @@ jQuery(function($){
 			},
 			success:(res)=>{
 				// console.log($(this));
-				$(this).parent().parent().html("");
+				$(this).parent().parent().remove();
+				location.href="gouwuche.html";
+				zongjia();
 			}
 		})
+
 			return;
 	}
 		// var num= $(this).prev().val() +1;
@@ -139,7 +145,7 @@ jQuery(function($){
 		var $djia2= $(this).parent().prev().find('span').html();
 		var $totalPrice2= ($num1-1) * $djia2;
 		// console.log($djia2,$totalPrice2)
-		$(this).parent().next().find('span').html("￥"+$totalPrice2);
+		$(this).parent().next().find('span').html($totalPrice2);
 		
 		$.ajax({
                             url:"../api/qty.php",
@@ -155,11 +161,13 @@ jQuery(function($){
                         }
 
                     })
+		zongjia();
 	})
 	$("tr:nth-of-type(n+1)").on("click",".remove",function(){
+		// zongjia();
 		var ids= $(this).parent().attr('id');
 		// console.log(ids);
-		$(this).parent().html("");
+		// $(this).parent().html("");
 		// $("tr:nth-of-type(n+1)").html("");
 		$.ajax({
 			url:"../api/remove.php",
@@ -170,32 +178,12 @@ jQuery(function($){
 				yonghuming:yonghuming
 			},
 			success:function(res1){
-			// 	var goodsArrs = JSON.parse(res1);
-
-			// 	var res1 ="";
-			// 	res1 += goodsArrs.map(function(item,idx){
-			// 		return '<tr id='+item.id+'>'+
-			// 	'<th><input class="select" type="checkbox" name=""></th>'+
-			// 	'<th>'+
-			// 		'<img src="'+item.img+'" class="shang">'+
-			// 		'<span class="title">'+item.title+'</span>'+
-			// 	'</th>'+
-			// 	'<th><span>自营自贸仓</span></th>'+
-			// 	'<th><span>'+item.price+'</span></th>'+
-			// 	'<th>'+
-			// 		'<span class="jian"><img src="../images/flow_icon_p-.png" class="gwc_jian"></span>'+
-			// 		'<input type="text" value='+item.qty+'>'+
-			// 		'<span class="jia"><img src="../images/flow_icon_add.png" class="gwc_add"></span>'+
-			// 	'</th>'+
-			// 	'<th><span>'+item.price+'</span></th>'+
-			// 	'<th><span>税费补贴</span></th>'+
-			// 	'<th class="remove"><span>删除</span></th>'+
-			// '</tr>'
-			// 	});
-			// 	console.log(res1);
-			// 	$tr1.after(res1);
+			$(this).parent().parent().remove();
+				location.href="gouwuche.html";
+				zongjia();
 			}
 		})
+		zongjia();
 	})
  var $sCheckbox = $(":checkbox").not(".allBtn");
  // console.log($sCheckbox);
@@ -204,32 +192,35 @@ jQuery(function($){
 		// console.log($(this));
 		$sCheckbox.prop("checked",this.checked);
 		changeAllChecked();
-		if($allBtn.prop("checked")){
-			$(".dollar").html($totals);
-		}else{
-			$(".dollar").html("00.00");
-		}
+		// if($allBtn.prop("checked")){
+		// 	$(".dollar").html($totals);
+		// }else{
+		// 	$(".dollar").html("00.00");
+		// }
+		zongjia();
 	})
 	$btn2.on("click",function(){
 		$sCheckbox.prop("checked",this.checked);
 		changeAllChecked();
+		zongjia();
 	})
 	$sCheckbox.on("click",function(){
 		changeAllChecked();
-		if($(this).prop("checked")){
-			var jg = $(this).parent().parent().find('.xj').html();
-			// console.log(jg);
-			var $total =Number($(".dollar").html())+Number(jg);
-			$(".dollar").html($total);
-			// console.log($(".dollar").html());
-		}else{
-			var jg = $(this).parent().parent().find('.xj').html();
-			// console.log(jg);
-			var $total =Number($(".dollar").html())-Number(jg);
-			$(".dollar").html($total);
-			// console.log($(".dollar").html());
+		zongjia();
+		// if($(this).prop("checked")){
+		// 	var jg = $(this).parent().parent().find('.xj').html();
+		// 	// console.log(jg);
+		// 	var $total =Number($(".dollar").html())+Number(jg);
+		// 	$(".dollar").html($total);
+		// 	// console.log($(".dollar").html());
+		// }else{
+		// 	var jg = $(this).parent().parent().find('.xj').html();
+		// 	// console.log(jg);
+		// 	var $total =Number($(".dollar").html())-Number(jg);
+		// 	$(".dollar").html($total);
+		// 	// console.log($(".dollar").html());
 			
-		}
+		// }
 		
 	})
 	function changeAllChecked(){
@@ -245,6 +236,16 @@ jQuery(function($){
                     // $(".dollar").html($totals);
                     $btn2.prop("checked",false);
                 }
+            }
+            function zongjia(){
+            	// var lens = $sCheckbox.filter(":checked").length;
+            	var res=0;
+            	$sCheckbox.filter(":checked").each(function(idx,item){
+            		var zhi = $(item).parent().parent().find('.xj').html();
+            		res += Number(zhi);
+            		console.log(res);
+            	})
+            	$(".dollar").html(res);
             }
         $.ajax({
             url:"../api/xuanran.php",

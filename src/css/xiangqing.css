@@ -154,6 +154,20 @@
   height: 600px;
 }
 
+.detail .xiaotu {
+  position: fixed;
+  top: 300px;
+  left: 207px;
+  z-index: 999;
+  display: none;
+  border-radius: 50%;
+}
+
+.detail .xiaotu .fei {
+  height: 100px;
+  width: 100px;
+}
+
 .detail .right {
   box-sizing: border-box;
   padding: 60px 30px 0 563px;

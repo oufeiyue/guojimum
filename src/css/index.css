@@ -75,16 +75,65 @@
   width: 300px;
   margin-left: 40px;
   margin-top: 14px;
+  position: relative;
 }
 
 #header .header .top_right li {
   float: left;
+  position: relative;
+}
+
+#header .header .top_right li .car_li:hover .goodslist {
+  display: block;
+}
+
+#header .header .top_right li .car_li .goodslist {
+  max-height: 260px;
+  overflow-y: scroll;
+  display: none;
+  position: absolute;
+  top: 40px;
+  left: -171px;
+  width: 400px;
+  background: #fff;
+  border: 2px solid #e1e1e1;
+  border-radius: 20px;
+}
+
+#header .header .top_right li .car_li .goodslist .list1 {
+  padding-top: 10px;
+  vertical-align: middle;
+  height: 80px;
+}
+
+#header .header .top_right li .car_li .goodslist .list1 p {
+  float: left;
+  font-size: 12px;
+  margin-right: 10px;
+}
+
+#header .header .top_right li .car_li .goodslist .list1 p img {
+  width: 80px;
+  height: 66px;
+}
+
+#header .header .top_right li .car_li .goodslist .list1 .title1 {
+  font-size: 12px;
+  width: 194px;
+  vertical-align: middle;
+  line-height: 20px;
+  margin: 10px 10px 0 6px;
+}
+
+#header .header .top_right li .car_li .goodslist .list1 .p1 {
+  padding-top: 20px;
 }
 
 #header .header .top_right li a {
   width: 40px;
   display: block;
   margin-right: 30px;
+  overflow: hidden;
 }
 
 #header .header .top_right li a img {

@@ -1,4 +1,5 @@
 jQuery(function($){
+    var $btn2=$(".btn2");
     var $i1 = $(".i1");
     var params = decodeURI(location.search);
     params = params.slice(1,-1);
@@ -37,6 +38,8 @@ jQuery(function($){
     var price;
     var title;
     var btn_gwc =document.getElementsByClassName("btn_gwc")[0];
+    var $xiaotu = $(".xiaotu");
+    var fei =document.getElementsByClassName("fei")[0];
 	// var goodId = decodeURI(location.search);
  //    goodId = goodId.slice(8);
     $.ajax({
@@ -47,6 +50,8 @@ jQuery(function($){
 		},
 		success:function(res){
 			var goodsArr = JSON.parse(res);
+            // console.log(goodsArr);
+            fei.src=goodsArr[0].img;
             title=goodsArr[0].title;
 			name.innerHTML= goodsArr[0].title;
 			jiage.innerHTML='￥'+goodsArr[0].price;
@@ -119,6 +124,10 @@ jQuery(function($){
             },
             success:function(res){
                 if(res == "cheng"){
+                    $xiaotu.css("display","block");
+                    $xiaotu.animate({left:"1100px",top:"230px"},1000,function(){
+                        $xiaotu.css("display","none");
+                    });
                     $clear.css("display","none");
                     $buy.css("display","block");
                     $box.css("display","none");
@@ -140,7 +149,7 @@ jQuery(function($){
                 }else{
                     var shujuArr = JSON.parse(res);
                     var qtys = shujuArr[0].qty;
-                    console.log(qtys);
+                    // console.log(qtys);
                     qty = Number(qty) + Number(qtys);
                     $.ajax({
                             url:"../api/qty.php",
@@ -155,6 +164,10 @@ jQuery(function($){
                             },
                             success:function(res){
                                 if(res == "cheng"){
+                                    $xiaotu.css("display","block");
+                    $xiaotu.animate({left:"1100px",top:"230px"},1000,function(){
+                        $xiaotu.css("display","none");
+                    });
                                     $clear.css("display","none");
                                     $buy.css("display","block");
                                     $box.css("display","none");
@@ -214,4 +227,7 @@ jQuery(function($){
                 $i1.html(btn2_len);
             }
         })
+        $btn2.on("click",function(){
+        location.href="gouwuche.html";
+    })
 })
