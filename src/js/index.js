@@ -4,12 +4,16 @@ jQuery(function($){
 	$('.carousel').carousel({
 	  interval: 3000
 	})
+    var $tui =$(".tui");
 	var timer;
     var $car_li =$(".car_li");
     var names =document.getElementsByClassName("names")[0];
     var $zhaoshangpin =$(".zhaoshangpin");
-    var yonghuming = decodeURI(location.search);
-    yonghuming = yonghuming.slice(12);
+    // var yonghuming = decodeURI(location.search);
+    // yonghuming = yonghuming.slice(12);
+    // console.log(yonghuming);
+    var yonghuming = document.cookie;
+    yonghuming = yonghuming.slice(11);
     console.log(yonghuming);
 	var btn5 = document.getElementsByClassName("btn5")[0];
     console.log(yonghuming);
@@ -38,5 +42,10 @@ jQuery(function($){
     })
     $zhaoshangpin.on("click",function(){
         location.href="html/goods?yonghuming="+yonghuming;
+    })
+    $tui.on("click",function(){
+        Cookie.removeCookie("yonghuming",yonghuming,"/");
+        console.log(666);
+        location.href="index.html";
     })
 })

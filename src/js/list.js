@@ -11,7 +11,9 @@ jQuery(function($){
 			obj[arr[0]] = arr[1];
 		})
     var currentId = obj.currentId;
-    var yonghuming = obj.yonghuming;
+    // var yonghuming = obj.yonghuming;
+    var yonghuming = document.cookie;
+     yonghuming = yonghuming.slice(11);
     console.log(currentId,yonghuming);
     var u1 =document.getElementsByClassName("brand_u1")[0];
     var jia = document.getElementsByClassName("jia")[0];

@@ -101,6 +101,14 @@
   color: #FF2837;
 }
 
+#header .header .top_right li .tui {
+  position: absolute;
+  top: 21px;
+  right: -102px;
+  font-size: 12px;
+  color: #FF2837;
+}
+
 #header .header .top_right .l1 {
   position: relative;
 }

@@ -11,7 +11,9 @@ jQuery(function($){
             obj[arr[0]] = arr[1];
         })
     var goodId = obj.goodId;
-    var yonghuming = obj.yonghuming;
+    // var yonghuming = obj.yonghuming;
+    var yonghuming = document.cookie;
+     yonghuming = yonghuming.slice(11);
     // console.log(goodId,yonghuming);
 	var exzoom_img_ul = document.getElementsByClassName("exzoom_img_ul")[0];
 	var btn5 = document.getElementsByClassName("btn5")[0];

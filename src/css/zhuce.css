@@ -240,3 +240,90 @@ span.red {
   padding-top: 23px;
   vertical-align: middle;
 }
+
+#bottom {
+  background: #333;
+  margin-top: 480px;
+}
+
+#bottom .bottom {
+  height: 170px;
+}
+
+#bottom .bottom ul {
+  margin-left: 260px;
+  overflow: hidden;
+}
+
+#bottom .bottom ul li {
+  float: left;
+}
+
+#bottom .bottom ul li a {
+  color: #b9b9b9;
+  font-size: 12px;
+  display: block;
+  margin: 30px 30px 10px 0;
+}
+
+#bottom .bottom p {
+  font-size: 12px;
+  color: #b9b9b9;
+  margin-left: 345px;
+}
+
+#bottom .bottom img {
+  height: 50px;
+  margin: 10px 0 0 512px;
+}
+
+.btns {
+  height: 381px;
+  width: 75px;
+  position: fixed;
+  border: 2px solid #e1e1e1;
+  top: 126px;
+  right: 50px;
+  background: #f5f5f5;
+  border-radius: 15px;
+}
+
+.btns .btn_r {
+  height: 75px;
+  border-bottom: 2px solid  #e1e1e1;
+  margin-bottom: 0;
+  position: relative;
+  cursor: pointer;
+}
+
+.btns .btn_r img {
+  width: 70px;
+  height: 70px;
+  position: absolute;
+}
+
+.btns .btn_r span {
+  line-height: 120px;
+  font-size: 12px;
+  display: block;
+  margin-left: 15px;
+}
+
+.btns .btn_r .i1 {
+  position: absolute;
+  background: #FF2837;
+  color: #fff;
+  top: 4px;
+  right: 4px;
+  height: 20px;
+  width: 20px;
+  font-size: 12px;
+  border-radius: 50%;
+  display: block;
+  text-align: center;
+  line-height: 20px;
+}
+
+.btns .btn5 {
+  border: none;
+}
