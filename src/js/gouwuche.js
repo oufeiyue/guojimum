@@ -1,4 +1,5 @@
 jQuery(function($){
+	var $i1=$(".i1");
 	// var yonghuming = decodeURI(location.search);
  //    yonghuming = yonghuming.slice(12);
  var $allBtn =$(".allBtn");
@@ -245,4 +246,17 @@ jQuery(function($){
                     $btn2.prop("checked",false);
                 }
             }
+        $.ajax({
+            url:"../api/xuanran.php",
+            type:"GET",
+            // async:false,
+            data:{
+                uname:yonghuming
+            },
+            success:function(res){
+                goodsArr = JSON.parse(res);
+                var btn2_len = goodsArr.length;
+                $i1.html(btn2_len);
+            }
+        })
 })

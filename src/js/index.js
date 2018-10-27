@@ -4,6 +4,7 @@ jQuery(function($){
 	$('.carousel').carousel({
 	  interval: 3000
 	})
+    var $i1=$(".i1");
     var $tui =$(".tui");
 	var timer;
     var $car_li =$(".car_li");
@@ -48,4 +49,17 @@ jQuery(function($){
         console.log(666);
         location.href="index.html";
     })
+    $.ajax({
+            url:"../api/xuanran.php",
+            type:"GET",
+            // async:false,
+            data:{
+                uname:yonghuming
+            },
+            success:function(res){
+                goodsArr = JSON.parse(res);
+                var btn2_len = goodsArr.length;
+                $i1.html(btn2_len);
+            }
+        })
 })

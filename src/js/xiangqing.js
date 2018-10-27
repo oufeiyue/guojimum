@@ -1,4 +1,5 @@
 jQuery(function($){
+    var $i1 = $(".i1");
     var params = decodeURI(location.search);
     params = params.slice(1,-1);
 
@@ -121,6 +122,19 @@ jQuery(function($){
                     $clear.css("display","none");
                     $buy.css("display","block");
                     $box.css("display","none");
+                     $.ajax({
+                                        url:"../api/xuanran.php",
+                                        type:"GET",
+                                        // async:false,
+                                        data:{
+                                            uname:yonghuming
+                                        },
+                                        success:function(res){
+                                            goodsArr = JSON.parse(res);
+                                            var btn2_len = goodsArr.length;
+                                            $i1.html(btn2_len);
+                                        }
+                                    })
                 }else if(res=="bai"){
                     alert("添加失败");
                 }else{
@@ -144,6 +158,19 @@ jQuery(function($){
                                     $clear.css("display","none");
                                     $buy.css("display","block");
                                     $box.css("display","none");
+                                    $.ajax({
+                                        url:"../api/xuanran.php",
+                                        type:"GET",
+                                        // async:false,
+                                        data:{
+                                            uname:yonghuming
+                                        },
+                                        success:function(res){
+                                            goodsArr = JSON.parse(res);
+                                            var btn2_len = goodsArr.length;
+                                            $i1.html(btn2_len);
+                                        }
+                                    })
                                 }else if(res=="bai"){
                                     alert("添加失败");
                             }
@@ -174,4 +201,17 @@ jQuery(function($){
                     window.scrollBy(0,-speed);
                 }, 30)
             }
+        $.ajax({
+            url:"../api/xuanran.php",
+            type:"GET",
+            // async:false,
+            data:{
+                uname:yonghuming
+            },
+            success:function(res){
+                goodsArr = JSON.parse(res);
+                var btn2_len = goodsArr.length;
+                $i1.html(btn2_len);
+            }
+        })
 })

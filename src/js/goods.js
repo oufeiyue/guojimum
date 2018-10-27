@@ -1,6 +1,7 @@
 jQuery(function($){
 	var timer;
 	var btn5 = document.getElementsByClassName("btn5")[0];
+    var $i1=$(".i1");
     var yonghuming= document.cookie;
      yonghuming = yonghuming.slice(11);
      console.log(yonghuming);
@@ -27,4 +28,17 @@ jQuery(function($){
             var currentId =this.id;
             location.href = "list.html?currentId="+encodeURI(currentId)+"&yonghuming=" +yonghuming+"&";
     })
+    $.ajax({
+            url:"../api/xuanran.php",
+            type:"GET",
+            // async:false,
+            data:{
+                uname:yonghuming
+            },
+            success:function(res){
+                goodsArr = JSON.parse(res);
+                var btn2_len = goodsArr.length;
+                $i1.html(btn2_len);
+            }
+        })
 })

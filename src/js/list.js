@@ -1,4 +1,5 @@
 jQuery(function($){
+	var $i1=$(".i1");
 	var params = decodeURI(location.search);
 	params = params.slice(1,-1);
 
@@ -137,5 +138,17 @@ jQuery(function($){
                     window.scrollBy(0,-speed);
                 }, 30)
             }
-
+            $.ajax({
+            url:"../api/xuanran.php",
+            type:"GET",
+            // async:false,
+            data:{
+                uname:yonghuming
+            },
+            success:function(res){
+                goodsArr = JSON.parse(res);
+                var btn2_len = goodsArr.length;
+                $i1.html(btn2_len);
+            }
+        })
 })
